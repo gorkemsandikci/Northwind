@@ -1,0 +1,55 @@
+﻿@model Employee
+
+@{
+    ViewData["Title"] = "Create Employee";
+}
+
+<div class="container mt-4">
+    <form method="post">
+        <legend class="text-primary">Create Employee</legend>
+        <fieldset>
+            <div class="form-group">
+                <label asp-for="FirstName"  class="form-label mt-4">FirstName Name:</label>
+                <input asp-for="FirstName" class="form-control" placeholder="Place Enter FirstName Name">
+                <small id="FirstName" class="form-text text-muted">You should add FirstName name, you can edit later..</small>
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="form-group">
+                <label asp-for="LastName" class="form-label mt-4">LastName:</label>
+                <input asp-for="LastName" class="form-control" placeholder="Place Enter LastName">
+                <small id="LastName" class="form-text text-muted">You should add LastName, you can edit later..</small>
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="form-group">
+                <label asp-for="Title" class="form-label mt-4">Title:</label>
+                <input asp-for="Title" class="form-control" placeholder="Place Enter Title">
+                <small id="Title" class="form-text text-muted">You should add Title, you can edit later..</small>
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+        </fieldset>
+        <fieldset>
+            <div class="form-group">
+                <label asp-for="TitleOfCourtesy" class="form-label mt-4">TitleOfCourtesy:</label>
+                <input asp-for="TitleOfCourtesy" class="form-control" placeholder="Place Enter TitleOfCourtesy">
+                <small id="TitleOfCourtesy" class="form-text text-muted">You should add TitleOfCourtesy, you can edit later..</small>
+                <span asp-validation-for="TitleOfCourtesy" class="text-danger"></span>
+            </div>
+        </fieldset>
+        
+        <fieldset class="mt-4 text-center">
+            <button type="submit" class="btn btn-outline-success">
+                <i class="bi bi-plus-circle"></i>
+                Create Employee
+            </button>
+            <a asp-controller="Employee" asp-action="Index" class="btn btn-outline-secondary">Back To List</a>
+        </fieldset>
+    </form>
+</div>
+
+@section scripts {
+    <partial name = "_ValidationScriptsPartial"/>
+}

@@ -1,0 +1,27 @@
+﻿@model List<Product>
+@{
+    ViewData["Title"] = "Product List";
+}
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th scope="col">id</th>
+        <th scope="col">Category Name</th>
+        <th scope="col">Category Units In Stock</th>
+        <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th scope="row">@item.ProductId</th>
+            <th scope="row">@item.ProductName</th> 
+            <th scope="row">@item.UnitsInStock</th>
+            <th><a href="" asp-controller="" class="btn btn-danger btn-sm">Delete</a></th>
+
+        </tr>
+    }
+    </tbody>
+</table>
